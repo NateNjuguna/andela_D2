@@ -21,7 +21,7 @@ class Resource(object):
 		conn = httplib.HTTPConnection(self.host, self.port, False, 300)
 		conn.request(action, url, json.dumps(body), headers)
 		resp = conn.getresponse()
-		resp = {'status':str(resp.status)+' HTTP/'+str(resp.version),'headers':resp.getheaders(),'data':str(resp.read())}
+		resp = {'status':str(resp.status)+' HTTP/'+str(resp.version)[0]+'.'+str(resp.version)[0],'headers':resp.getheaders(),'data':str(resp.read())}
 		conn.close()
 		return resp
 
@@ -38,7 +38,7 @@ class Resource(object):
 		conn = httplib.HTTPConnection(self.host, self.port, False, 300)
 		conn.request('GET', url, None, headers)
 		resp = conn.getresponse()
-		resp = {'status':str(resp.status)+' HTTP/'+str(resp.version),'headers':resp.getheaders(),'data':str(resp.read())}
+		resp = {'status':str(resp.status)+' HTTP/'+str(resp.version)[0]+'.'+str(resp.version)[0],'headers':resp.getheaders(),'data':str(resp.read())}
 		conn.close()
 		return resp
 
@@ -55,7 +55,7 @@ class Resource(object):
 		conn = httplib.HTTPConnection(self.host, self.port, False, 300)
 		conn.request('POST', url, json.dumps(body), headers)
 		resp = conn.getresponse()
-		resp = {'status':str(resp.status)+' HTTP/'+str(resp.version),'headers':resp.getheaders(),'data':str(resp.read())}
+		resp = {'status':str(resp.status)+' HTTP/'+str(resp.version)[0]+'.'+str(resp.version)[0],'headers':resp.getheaders(),'data':str(resp.read())}
 		conn.close()
 		return resp
 
