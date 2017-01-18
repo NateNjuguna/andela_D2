@@ -12,7 +12,7 @@ class Resource(object):
 		if headers is None:
 			headers = self.defaultHeaders
 		if self.useAuth is True:
-			headers['Authorization'] = self.auth['type'] + ': ' + self.auth['token']
+			headers['Authorization'] = self.auth['type'] + ' ' + self.auth['token']
 		url = self.URI
 		if params is not None:
 			for k, v in params.items():
@@ -46,7 +46,7 @@ class Resource(object):
 		if headers is None:
 			headers = self.defaultHeaders
 		if self.useAuth is True:
-			headers['Authorization'] = self.auth['type'] + ': ' + self.auth['token']
+			headers['Authorization'] = self.auth['type'] + ' ' + self.auth['token']
 		url = self.URI
 		if params is not None:
 			for k, v in params.items():
