@@ -29,7 +29,7 @@ All 1 modules OK
 Accepts three arguments from the commandline `host`, `endpoint URI` and `port`
 ```bash
 $cd api_app
-api_app$ python my_app.py 'twende.techstart.co.ke' '/api/v1/:endpoint/:id'
+api_app$ python my_app.py 'twende.techstart.co.ke' '/api/v1/:endpoint/:id' 80
 A simple program to refresh a token at the public API found here -twende.techstart.co.ke/api/v1/:endpoint/:id
 Add it to the header and use it to fetch a list of users
 Getting new token ...
