@@ -12,7 +12,7 @@ class Resource(object):
 		if headers is None:
 			headers = self.defaultHeaders
 		if self.useAuth is True:
-			headers['Authorization'] = self.auth.type + ': ' + self.auth.token
+			headers['Authorization'] = self.auth['type'] + ': ' + self.auth['token']
 		url = self.URI
 		if params is not None:
 			for k, v in params.items():
@@ -29,10 +29,10 @@ class Resource(object):
 		if headers is None:
 			headers = self.defaultHeaders
 		if self.useAuth is True:
-			headers['Authorization'] = self.auth.type + ': ' + self.auth.token
+			headers['Authorization'] = self.auth['type'] + ': ' + self.auth['token']
 		url = self.URI
 		if params is not None:
-			for (k, v) in params:
+			for k, v in params.items():
 				url = url.replace(str(':'+k), str(v))
 		url = url.split(':')[0]
 		conn = httplib.HTTPConnection(self.host, self.port, False, 300)
@@ -46,7 +46,7 @@ class Resource(object):
 		if headers is None:
 			headers = self.defaultHeaders
 		if self.useAuth is True:
-			headers['Authorization'] = self.auth.type + ': ' + self.auth.token
+			headers['Authorization'] = self.auth['type'] + ': ' + self.auth['token']
 		url = self.URI
 		if params is not None:
 			for k, v in params.items():
@@ -59,7 +59,7 @@ class Resource(object):
 		conn.close()
 		return resp
 
-	def useAuth(self, aythType, authToken):
+	def useAuth(self, authType, authToken):
 		self.auth = {}
 		self.auth['type'] = authType
 		self.auth['token'] = authToken

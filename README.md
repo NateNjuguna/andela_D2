@@ -25,8 +25,24 @@ no test dir found testing here: ./
 Ran 5 test cases in 0.00s (0.00s CPU)
 All 1 modules OK
 ```
-##  Python HTTP API Activity
-A resource based python HTTP client for RESTful APIs that use JSON 
+##  Python HTTP API Activity - `my_app.py`
+Accepts two arguments from the commandline
+```bash
+$cd api_app
+api_app$ python my_app.py 'twende.techstart.co.ke' '/api/v1/:endpoint/:id'
+A simple program to refresh a token at the public API found here -twende.techstart.co.ke/api/v1/:endpoint/:id
+Add it to the header and use it to fetch a list of users
+Getting new token ...
+Adding new token to Auth header ...
+New Token Data- {'token': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXV...', 'type': 'Bearer'}
+Fetching User List ...
+
+
+{"code":"001","message":"Unauthorized - Invalid Token"}
+
+ Thank you ...
+```
+Uses a custom resource based python HTTP client for RESTful APIs that use JSON 
 ### Usage
 **Example**
 ```bash
