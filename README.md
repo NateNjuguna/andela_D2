@@ -26,7 +26,7 @@ Ran 5 test cases in 0.00s (0.00s CPU)
 All 1 modules OK
 ```
 ##  Python HTTP API Activity - `my_app.py`
-Accepts two arguments from the commandline
+Accepts three arguments from the commandline `host`, `endpoint URI` and `port`
 ```bash
 $cd api_app
 api_app$ python my_app.py 'twende.techstart.co.ke' '/api/v1/:endpoint/:id'
